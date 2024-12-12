@@ -1,0 +1,142 @@
+/* General Container */
+.bingo-container {
+    background-color: #f7f9fc;
+    border-radius: 12px;
+    padding: 30px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    max-width: 1200px;
+    margin: 40px auto;
+  }
+  
+  /* Title Styles */
+  .bingo-title {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #4caf50;
+    margin-bottom: 20px;
+  }
+  
+  .drawn-numbers-title {
+    font-size: 1.8rem;
+    color: #007bff;
+  }
+  
+  .boleto-title {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: #ff5722;
+    margin-top: 30px;
+  }
+  
+  /* Button Styles */
+  .btn-success {
+    font-size: 1.2rem;
+    padding: 10px 20px;
+  }
+  
+  .btn-primary {
+    font-size: 1rem;
+    padding: 8px 16px;
+  }
+  
+  /* Current Number */
+  .current-number {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #e91e63;
+    background-color: #fff;
+    padding: 10px 20px;
+    border-radius: 8px;
+    display: inline-block;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+  }
+  
+  .current-number span {
+    color: #ff5722;
+  }
+  
+  /* Numbers Drawn */
+  .drawn-numbers {
+    margin-top: 20px;
+  }
+  
+  .number-box {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #fff;
+    background-color: #007bff;
+    padding: 10px;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 5px;
+    transition: transform 0.2s ease;
+  }
+  
+  .number-box:hover {
+    transform: scale(1.1);
+    background-color: #0056b3;
+  }
+  
+  /* Layout Adjustments */
+  .numbers-container {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin-top: 30px;
+  }
+  
+  .left-section {
+    flex: 1;
+    margin-right: 20px;
+  }
+  
+  .right-section {
+    flex: 1;
+    margin-left: 20px;
+  }
+  
+  /* Boleto Styles */
+  .boleto-container {
+    max-width: 400px;
+    margin: 0 auto;
+    text-align: center;
+    padding: 20px;
+    background-color: #f7f9fc;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  }
+  
+  .boleto-table {
+    width: 100%;
+    margin-top: 20px;
+    border-collapse: collapse;
+  }
+  
+  .boleto-cell {
+    background-color: #ffffff;
+    border: 2px solid #007bff;
+    border-radius: 8px;
+    padding: 10px 0;
+    font-size: 1.2rem;
+    font-weight: bold;
+    text-align: center;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+  }
+  
+  .boleto-cell:hover {
+    background-color: #e0f7fa;
+    transform: scale(1.05);
+  }
+  
+  .selected-cell {
+    background-color: #4caf50;
+    color: white;
+    border-color: #388e3c;
+  }
+  
