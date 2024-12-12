@@ -4,24 +4,22 @@
     <div class="col-md-6">
       <h4 class="drawn-numbers-title text-center">Números Sacados:</h4>
       <div class="drawn-numbers d-flex flex-wrap justify-content-center">
-        <span 
-          *ngFor="let number of numerosSacados" 
-          class="number-box shadow-sm">
+        <span *ngFor="let number of numerosSacados" class="number-box shadow-sm">
           {{ number }}
         </span>
       </div>
 
-      
+
     </div>
 
     <!-- Generar Número a la derecha -->
     <div class="col-md-6 text-center">
       <h1 class="bingo-title">¡Bienvenido al Bingo!</h1>
-      <button 
-        class="btn btn-lg btn-success shadow" 
-        (click)="generarNumero()" 
-        [disabled]="numerosBingo.length === 0">
+      <button class="btn btn-lg btn-success shadow" (click)="generarNumero()" [disabled]="numerosBingo.length === 0">
         🎲 Sacar Número
+      </button>
+      <button style="margin-left: 2rem;" class="btn btn-lg btn-success shadow" (click)="resetBingo()">
+        🔄 Reset Bingo
       </button>
 
       <div *ngIf="numeroActual !== 0" class="mt-4">
@@ -31,32 +29,27 @@
       </div>
 
       <!-- Boleto justo debajo -->
-      <div class="boleto-container mt-4">
-        <h2 class="boleto-title">Tu Boleto</h2>
-        
-        <!-- Botón para generar el boleto -->
-        <button 
-          class="btn btn-primary my-3" 
-          (click)="generarBoleto()">
-          Generar Boleto
-        </button>
 
-        <!-- Tabla para mostrar el boleto de bingo -->
-        <table class="table table-bordered boleto-table" *ngIf="boleto.length > 0">
-          <tbody>
-            <tr *ngFor="let fila of [0, 1, 2, 3, 4]">
-              <td
-                *ngFor="let columna of [0, 1, 2, 3, 4]"
-                class="text-center boleto-cell"
-                [ngClass]="{'selected-cell': seleccionadas.includes(boleto[fila * 5 + columna])}"
-                (click)="oscurecer(boleto[fila * 5 + columna])"
-              >
-                {{ boleto[fila * 5 + columna] }}
-              </td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
+      <h2 class="boleto-title">Boleto</h2>
+
+      <!-- Botón para generar el boleto -->
+      <button class="btn btn-primary my-3" (click)="generarBoleto()">
+        Generar Boleto
+      </button>
+
+      <!-- Tabla para mostrar el boleto de bingo -->
+      <table class="table table-bordered boleto-table" *ngIf="boleto.length > 0">
+        <tbody>
+          <tr *ngFor="let fila of [0, 1, 2, 3, 4]">
+            <td *ngFor="let columna of [0, 1, 2, 3, 4]" class="text-center boleto-cell"
+              [ngClass]="{'selected-cell': seleccionadas.includes(boleto[fila * 5 + columna])}"
+              (click)="oscurecer(boleto[fila * 5 + columna])">
+              {{ boleto[fila * 5 + columna] }}
+            </td>
+          </tr>
+        </tbody>
+      </table>
+
     </div>
   </div>
 </div>

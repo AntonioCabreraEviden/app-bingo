@@ -12,19 +12,17 @@
   .bingo-title {
     font-size: 2.5rem;
     font-weight: bold;
-    color: #4caf50;
     margin-bottom: 20px;
   }
   
   .drawn-numbers-title {
     font-size: 1.8rem;
-    color: #007bff;
+   
   }
   
   .boleto-title {
     font-size: 1.8rem;
     font-weight: bold;
-    color: #ff5722;
     margin-top: 30px;
   }
   
@@ -43,7 +41,6 @@
   .current-number {
     font-size: 2rem;
     font-weight: bold;
-    color: #e91e63;
     background-color: #fff;
     padding: 10px 20px;
     border-radius: 8px;
@@ -53,7 +50,7 @@
   }
   
   .current-number span {
-    color: #ff5722;
+    color: red;
   }
   
   /* Numbers Drawn */
@@ -119,7 +116,7 @@
   
   .boleto-cell {
     background-color: #ffffff;
-    border: 2px solid #007bff;
+    border: 2px solid #b91414;
     border-radius: 8px;
     padding: 10px 0;
     font-size: 1.2rem;

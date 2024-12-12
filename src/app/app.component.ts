@@ -6,8 +6,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./app.component.css'] // Corregido: styleUrls en plural
 })
 export class AppComponent implements OnInit {
-  numerosBingo: number[] = [];
-  numeroActual: number = 0;
+  numerosBingo: number[] = []; // Numeros dentro del bingo
+  numeroActual: number = 0; // Numero ultimo que ha salido
   numerosSacados: number[] = []; // Números que han salido
   lineaHecha: boolean = false;
 
@@ -18,10 +18,19 @@ export class AppComponent implements OnInit {
 
   ngOnInit(): void {
     // Inicializar el arreglo de números del bingo (1 a 75)
-    this.numerosBingo = Array.from({ length: 75 }, (_, i) => i + 1);
+    this.numerosBingo = [];
+    for (let i = 0; i < 75; i++) {
+      this.numerosBingo.push(i + 1);
+    }
+
   }
 
   generarNumero(): void {
+
+    if (this.boleto.length === 0 ) {
+      alert("Primero debes sacar boleto!");
+      return;
+    }
 
     do {
       this.numeroActual = Math.floor(Math.random() * 75) + 1;
@@ -33,6 +42,16 @@ export class AppComponent implements OnInit {
       this.numerosBingo.splice(indice, 1);
     }
     this.numerosSacados.push(this.numeroActual);
+  }
+
+  resetBingo(): void {
+    this.numerosBingo = [];
+    for (let i = 0; i < 75; i++) {
+      this.numerosBingo.push(i + 1);
+    }
+
+    this.numerosSacados = [];
+
   }
 
   generarBoleto(): void {
@@ -62,12 +81,12 @@ export class AppComponent implements OnInit {
 
     // Verificar el bingo
     if (this.seleccionadas.length === 25) {
-      alert('¡BINGO!');
+      alert(' 🎉 ¡BINGO! 🎉');
     }
 
     // Verificar línea 
     if (this.linea() && !this.lineaHecha) {
-      alert('¡Línea horizontal completada!');
+      alert(' 🎉 ¡Línea completada!  🎉');
       this.lineaHecha = true;
     }
   }
@@ -79,7 +98,7 @@ export class AppComponent implements OnInit {
 
       const fila: number[] = [];
       for (let j = 0; j < 5; j++) {
-        fila.push(inicioFila*5 + j);
+        fila.push(inicioFila + j);
       }
 
       if (fila.every(num => this.seleccionadas.includes(this.boleto[num]))) {
