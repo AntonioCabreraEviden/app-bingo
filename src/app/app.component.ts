@@ -52,6 +52,8 @@ export class AppComponent implements OnInit {
 
     this.numerosSacados = [];
 
+    this.generarBoleto();
+
   }
 
   generarBoleto(): void {
